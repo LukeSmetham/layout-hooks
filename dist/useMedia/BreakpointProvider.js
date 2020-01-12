@@ -21,10 +21,10 @@ var defaultBreakpoints = {
   xl: 2200
 };
 
-var _default = function _default(props) {
-  var _props$breakpoints = props.breakpoints,
-      breakpoints = _props$breakpoints === void 0 ? defaultBreakpoints : _props$breakpoints,
-      children = props.children;
+var _default = function _default(_ref) {
+  var _ref$breakpoints = _ref.breakpoints,
+      breakpoints = _ref$breakpoints === void 0 ? defaultBreakpoints : _ref$breakpoints,
+      children = _ref.children;
   return _react["default"].createElement(_BreakpointContext["default"].Provider, {
     value: breakpoints
   }, children);
