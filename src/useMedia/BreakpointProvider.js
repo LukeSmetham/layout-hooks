@@ -9,7 +9,6 @@ const defaultBreakpoints = {
 	xl: 2200,
 };
 
-export default props => {
-	const { breakpoints = defaultBreakpoints, children } = props;
-	return <Context.Provider value={breakpoints}>{children}</Context.Provider>;
-};
+export default ({ breakpoints = defaultBreakpoints, children }) => (
+	<Context.Provider value={breakpoints}>{children}</Context.Provider>
+);
