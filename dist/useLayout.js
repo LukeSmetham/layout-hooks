@@ -9,9 +9,7 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _resizeObserver = _interopRequireDefault(require("@juggle/resize-observer"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _resizeObserver = require("@juggle/resize-observer");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -36,7 +34,7 @@ var _default = function _default(ref) {
       return null;
     }
 
-    var observer = new _resizeObserver["default"](function (entries) {
+    var observer = new _resizeObserver.ResizeObserver(function (entries) {
       var _entries = _slicedToArray(entries, 1),
           entry = _entries[0];
 
