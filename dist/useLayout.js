@@ -32,6 +32,10 @@ var _default = function _default(ref) {
       setLayout = _useState2[1];
 
   (0, _react.useEffect)(function () {
+    if (ref.current) {
+      return null;
+    }
+
     var observer = new _resizeObserverPolyfill["default"](function (entries) {
       var _entries = _slicedToArray(entries, 1),
           entry = _entries[0];
