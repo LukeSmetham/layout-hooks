@@ -30,18 +30,16 @@ var _default = function _default(ref) {
       setLayout = _useState2[1];
 
   (0, _react.useEffect)(function () {
-    if (!ref.current) {
-      return null;
+    if (ref.current) {
+      var observer = new _resizeObserver.ResizeObserver(function (entries) {
+        var _entries = _slicedToArray(entries, 1),
+            entry = _entries[0];
+
+        setLayout(entry.contentRect);
+      });
+      observer.observe(ref.current);
+      return observer.disconnect();
     }
-
-    var observer = new _resizeObserver.ResizeObserver(function (entries) {
-      var _entries = _slicedToArray(entries, 1),
-          entry = _entries[0];
-
-      setLayout(entry.contentRect);
-    });
-    observer.observe(ref.current);
-    return observer.disconnect();
   }, [ref]);
   return layout;
 };
