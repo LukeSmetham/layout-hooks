@@ -5,7 +5,7 @@ export default ref => {
 	const [layout, setLayout] = useState(null);
 
 	useEffect(() => {
-		if (ref.current) {
+		if (!ref.current) {
 			return null;
 		}
 		const observer = new ResizeObserver(entries => {
