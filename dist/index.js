@@ -3,10 +3,16 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "useResize", {
+Object.defineProperty(exports, "useLayout", {
   enumerable: true,
   get: function get() {
-    return _useResize["default"];
+    return _useLayout["default"];
+  }
+});
+Object.defineProperty(exports, "useMedia", {
+  enumerable: true,
+  get: function get() {
+    return _useMedia["default"];
   }
 });
 Object.defineProperty(exports, "useStyledMedia", {
@@ -16,7 +22,9 @@ Object.defineProperty(exports, "useStyledMedia", {
   }
 });
 
-var _useResize = _interopRequireDefault(require("./useResize"));
+var _useLayout = _interopRequireDefault(require("./useLayout"));
+
+var _useMedia = _interopRequireDefault(require("./useMedia"));
 
 var _useStyledMedia = _interopRequireDefault(require("./useStyledMedia"));
 
