@@ -30,7 +30,7 @@ var _default = function _default(ref) {
       setLayout = _useState2[1];
 
   (0, _react.useEffect)(function () {
-    if (ref.current) {
+    if (!ref.current) {
       return null;
     }
 
