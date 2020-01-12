@@ -17,9 +17,6 @@
 			"pre-commit": "yarn lint && rm -rf dist && yarn run build"
 		}
 	},
-	"dependencies": {
-		"babel-preset-react": "^6.24.1"
-	},
 	"devDependencies": {
 		"@babel/cli": "^7.7.5",
 		"@babel/core": "^7.7.5",
