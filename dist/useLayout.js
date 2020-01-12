@@ -40,7 +40,7 @@ var _default = function _default(ref) {
       observer.observe(ref.current);
       return observer.disconnect();
     }
-  }, [ref]);
+  }, [ref.current]);
   return layout;
 };
 
