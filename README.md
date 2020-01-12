@@ -8,4 +8,4 @@ The `useResize` hook allows you measure a component by passing in a ref. This wo
 
 ## `useMedia` / `useStyledMedia`
 
-The `useMedia` hooks operate exactly the same, one using our `BreakpointProvider` and the other will look for a `breakpoints` key on your `styled-components` theme. You can then pass a breakpoint name and the hook will fire every time the media query changes.
+The `useMedia` hooks operate exactly the same, one using our `BreakpointProvider` and the other will look for a `breakpoints` key on your `styled-components` theme. You can then pass a breakpoint name and the hook will fire every time the media query changes. By utilizing `matchMedia` the hook will only run when the breakpoints match status changes from `true` to `false` or vice-versa, making it more performant than a standard resize listener.
