@@ -5,17 +5,16 @@ export default ref => {
 	const [layout, setLayout] = useState(null);
 
 	useEffect(() => {
-		if (!ref.current) {
-			return null;
+		if (ref.current) {
+			const observer = new ResizeObserver(entries => {
+				const [entry] = entries;
+				setLayout(entry.contentRect);
+			});
+
+			observer.observe(ref.current);
+
+			return observer.disconnect();
 		}
-		const observer = new ResizeObserver(entries => {
-			const [entry] = entries;
-			setLayout(entry.contentRect);
-		});
-
-		observer.observe(ref.current);
-
-		return observer.disconnect();
 	}, [ref]);
 
 	return layout;
