@@ -34,5 +34,8 @@
 	},
 	"peerDependencies": {
 		"react": "^16.12.0"
+	},
+	"dependencies": {
+		"resize-observer-polyfill": "^1.5.1"
 	}
 }
