@@ -29,5 +29,7 @@
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"husky": "^3.1.0",
 		"prettier": "^1.19.1"
-	}
+	},
+	"repository": "git@github.com:LukeSmetham/layout-hooks.git",
+	"author": "Luke Smetham <luke@arkitek.co.uk>"
 }

@@ -4,7 +4,7 @@ A set of React Hooks that help make your components responsive, either to their 
 
 ## `useResize`
 
-The `useResize` hook allows you measure a component by passing in a ref. This works even during css transitions, meaning you can always get an up to date value for the width of the component. This is great for building totally encapsulated components that respond to their own width.
+The `useResize` hook allows you measure a component by passing in a ref. This works even during css transitions, meaning you can always get an up to date value for the dimensions of a component and alter it's children accordingly. This is great for building totally encapsulated components that respond to their own width and can work in a variety of settings.
 
 ## `useMedia` / `useStyledMedia`
 
