@@ -3,6 +3,8 @@
 	"version": "1.0.0",
 	"main": "./dist/index.js",
 	"license": "MIT",
+	"repository": "git@github.com:LukeSmetham/layout-hooks.git",
+	"author": "Luke Smetham <luke@arkitek.co.uk>",
 	"scripts": {
 		"build": "yarn lint && babel src --out-dir dist",
 		"start": "node dist/index.js",
@@ -30,6 +32,7 @@
 		"husky": "^3.1.0",
 		"prettier": "^1.19.1"
 	},
-	"repository": "git@github.com:LukeSmetham/layout-hooks.git",
-	"author": "Luke Smetham <luke@arkitek.co.uk>"
+	"peerDependencies": {
+		"react": "^16.12.0"
+	}
 }
