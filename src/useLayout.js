@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'; // eslint-disable-line no-unused-vars
-import ResizeObserver from '@juggle/resize-observer';
+import { ResizeObserver } from '@juggle/resize-observer';
 
 export default ref => {
 	const [layout, setLayout] = useState(null);
