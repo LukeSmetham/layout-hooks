@@ -15,7 +15,7 @@ export default ref => {
 
 			return observer.disconnect();
 		}
-	}, [ref]);
+	}, [ref.current]);
 
 	return layout;
 };
