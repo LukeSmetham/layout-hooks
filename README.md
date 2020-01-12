@@ -1,6 +1,6 @@
 # Layout Hooks
 
-A set of React Hooks that help make your components responsive, either to their own width, their parent width or the browser width with `matchMedia`.
+A set of React Hooks that help make your components responsive, either to their own width, their parent width or the browser width.
 
 ## `useResize`
 
