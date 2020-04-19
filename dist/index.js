@@ -11,6 +11,12 @@ Object.defineProperty(exports, "useLayout", {
     return _useLayout["default"];
   }
 });
+Object.defineProperty(exports, "useLayoutMedia", {
+  enumerable: true,
+  get: function get() {
+    return _useLayoutMedia["default"];
+  }
+});
 Object.defineProperty(exports, "useMedia", {
   enumerable: true,
   get: function get() {
@@ -37,6 +43,8 @@ Object.defineProperty(exports, "useStyledMedia", {
 });
 
 var _useLayout = _interopRequireDefault(require("./useLayout"));
+
+var _useLayoutMedia = _interopRequireDefault(require("./useLayoutMedia"));
 
 var _useMedia = _interopRequireWildcard(require("./useMedia"));
 

@@ -23,27 +23,41 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var _default = function _default(ref) {
+var _default = function _default() {
   var _useState = (0, _react.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
-      layout = _useState2[0],
-      setLayout = _useState2[1];
+      ref = _useState2[0],
+      setRef = _useState2[1];
 
+  var _useState3 = (0, _react.useState)(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      layout = _useState4[0],
+      setLayout = _useState4[1];
+
+  var observer = (0, _react.useRef)(null);
+  var handleRef = (0, _react.useCallback)(function (el) {
+    if (!ref && el) {
+      setRef(el);
+    }
+  }, [ref]);
   (0, _react.useEffect)(function () {
-    var observer = new _resizeObserver.ResizeObserver(function (entries) {
-      var _entries = _slicedToArray(entries, 1),
-          entry = _entries[0];
+    if (ref && !observer.current) {
+      observer.current = new _resizeObserver.ResizeObserver(function (entries) {
+        var _entries = _slicedToArray(entries, 1),
+            entry = _entries[0];
 
-      setLayout(entry.contentRect);
-    });
-
-    if (ref.current) {
-      observer.observe(ref.current);
+        setLayout(entry.contentRect);
+      });
+      observer.current.observe(ref);
     }
 
-    return observer.disconnect();
-  }, [ref.current]);
-  return layout;
+    return function () {
+      if (observer.current) {
+        observer.current.disconnect();
+      }
+    };
+  }, [ref]);
+  return [layout, handleRef];
 };
 
 exports["default"] = _default;
