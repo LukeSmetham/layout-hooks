@@ -1,6 +1,6 @@
 # Layout Hooks
 
-A set of React Hooks that help make your components responsive, either to their own width, their parent width or the browser width.
+A set of React Hooks that help make your components responsive, either to their own size, their parents size or the browser viewport.
 
 ## `useLayout`
 
