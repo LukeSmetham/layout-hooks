@@ -48,17 +48,17 @@ const App = () => {
 // as an object on your styled components theme
 // & import useStyledMedia instead above.
 const breakpoints = {
-	xs: 600,
-	sm: 900,
-	md: 1200,
-	lg: 1800,
-	xl: 2200,
+  xs: 600,
+  sm: 900,
+  md: 1200,
+  lg: 1800,
+  xl: 2200,
 };
 
 export default () => {
-	<BreakpointsProvider breakpoints={breakpoints}>
-		<App />
-	</BreakpointsProvider>
+  <BreakpointsProvider breakpoints={breakpoints}>
+    <App />
+  </BreakpointsProvider>
 }
 ```
 
