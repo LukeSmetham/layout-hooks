@@ -11,7 +11,7 @@ import React from "react";
 import { useLayout, } from "layout-hooks";
 
 export default () => {
-  const layout = useLayout(900);
+  const [layout, setRef] = useLayout();
   
   console.log("layout", layout);
   
