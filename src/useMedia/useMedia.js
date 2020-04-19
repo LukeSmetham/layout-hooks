@@ -1,28 +1,38 @@
-import React, { useContext, useEffect } from 'react'; // eslint-disable-line no-unused-vars
+import React, { useContext, useEffect, useMemo, useState } from 'react'; // eslint-disable-line no-unused-vars
 import BreakpointContext from './BreakpointContext';
 
 export default (breakpoint, minmax = 'min') => {
-	if (!breakpoint) {
-		throw new Error('Must provide a breakpoint');
-	}
-
+	const [matches, setMatch] = useState(false);
 	const breakpoints = useContext(BreakpointContext);
 
-	// eslint-disable-next-line no-undef
-	const query = window.matchMedia(
-		`(${minmax}-width: ${breakpoints[breakpoint]}px)`
+	if (!breakpoint || !breakpoints[breakpoint]) {
+		throw new Error(
+			'useStyledMedia: breakpoint argument is missing or invalid.'
+		);
+	}
+
+	// Memoize the query so that the useEffect on line 27
+	// doesn't continually re-render.
+	const query = useMemo(
+		() =>
+			window.matchMedia(
+				`(${minmax}-width: ${breakpoints[breakpoint] -
+					(minmax === 'max' ? 1 : 0)}px)`
+			),
+		[breakpoint, minmax]
 	);
 
-	let matches = !query.matches;
+	// Callback to set the matched state.
+	const handleChange = ({ matches: isMatched }) => setMatch(!isMatched);
 
-	const handleChange = ({ matches: isMatched }) => {
-		matches = !isMatched;
-	};
-
+	// Initialize query listener
 	useEffect(() => {
 		query.addListener(handleChange);
-		return query.removeListener(handleChange);
-	}, []);
+		return () => query.removeListener(handleChange);
+	}, [query]);
+
+	// Check initial matched state.
+	useEffect(() => setMatch(!query.matches), []);
 
 	return matches;
 };

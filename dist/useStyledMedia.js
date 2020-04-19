@@ -31,11 +31,14 @@ var _default = function _default(breakpoint) {
       matches = _useState2[0],
       setMatch = _useState2[1];
 
-  if (!breakpoint) {
-    throw new Error('Must provide a breakpoint');
-  }
-
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
+
+  if (!breakpoint || !theme.breakpoints[breakpoint]) {
+    throw new Error('useStyledMedia: breakpoint argument is missing or invalid.');
+  } // Memoize the query so that the useEffect on line 27
+  // doesn't continually re-render.
+
+
   var query = (0, _react.useMemo)(function () {
     return window.matchMedia("(".concat(minmax, "-width: ").concat(theme.breakpoints[breakpoint] - (minmax === 'max' ? 1 : 0), "px)"));
   }, [breakpoint, minmax]); // Callback to set the matched state.
