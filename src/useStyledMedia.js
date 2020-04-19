@@ -3,13 +3,16 @@ import { ThemeContext } from 'styled-components';
 
 export default (breakpoint, minmax = 'min') => {
 	const [matches, setMatch] = useState(false);
-
-	if (!breakpoint) {
-		throw new Error('Must provide a breakpoint');
-	}
-
 	const theme = useContext(ThemeContext);
 
+	if (!breakpoint || !theme.breakpoints[breakpoint]) {
+		throw new Error(
+			'useStyledMedia: breakpoint argument is missing or invalid.'
+		);
+	}
+
+	// Memoize the query so that the useEffect on line 27
+	// doesn't continually re-render.
 	const query = useMemo(
 		() =>
 			window.matchMedia(
