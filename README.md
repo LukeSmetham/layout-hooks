@@ -2,6 +2,12 @@
 
 A set of React Hooks that help make your components responsive, either to their own size, their parents size or the browser viewport.
 
+## Installation
+```
+yarn add layout-hooks
+```
+
+
 ## `useLayout`
 
 The `useLayout` hook allows you measure a component in realtime. This works even during css transitions, meaning you can always get an up to date value for the dimensions of a component and alter it's children accordingly. This is great for building totally encapsulated components that respond to their own width and can work in a variety of settings.
