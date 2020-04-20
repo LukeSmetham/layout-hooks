@@ -1,6 +1,6 @@
 {
 	"name": "layout-hooks",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"main": "./dist/index.js",
 	"license": "MIT",
 	"repository": "git@github.com:LukeSmetham/layout-hooks.git",
