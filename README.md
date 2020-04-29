@@ -1,6 +1,6 @@
 # Layout Hooks
 
-A set of React Hooks that help make your components responsive, either to their own width, their parent width or the browser width.
+A set of React Hooks that help make your components responsive, either to their own width, their parent width or the browser width and get realtime dimensions even during CSS transitions.
 
 ## `useLayout`
 
@@ -12,24 +12,22 @@ import { useLayout, } from "layout-hooks";
 
 export default () => {
   const layout = useLayout(900);
-  
+
   console.log("layout", layout);
-  
+
   return (
     <div ref={setRef} />
   );
 }
 ```
 
-The `useLayout` hook will return a [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) everytime the dimensions of the element stored in the ref change. 
+The `useLayout` hook will return a [DOMRect](https://developer.mozilla.org/en-US/docs/Web/API/DOMRect) everytime the dimensions of the element stored in the ref change.
 
 Under the hood it uses the `ResizeObserver` API and depends on [this polyfill](https://www.npmjs.com/package/@juggle/resize-observer).
-
 
 ## `useMedia` / `useStyledMedia`
 
 Using either a `breakpoints` object on your `styled-components` theme or by importing the `BreakpointProvider`, you can pass the name of a breakpoint and the hook will fire every time the media query changes. By utilizing `matchMedia` the hook will only run when the breakpoints "matched" state changes from `true` to `false` or vice-versa, reducing rerenders and making it more performant than a standard resize listener.
-
 
 ```
 import React from "react";
@@ -38,7 +36,7 @@ import { useLayout, } from "layout-hooks";
 const App = () => {
   const isSm = useMedia('sm');
   const notSm = useMedia('sm', 'max');
-  
+
   return (
     <div />
   );
@@ -63,3 +61,8 @@ export default () => {
 ```
 
 The `useMedia` and `useStyled` media hooks return a `Boolean` value.
+
+## Todo
+
+-[] Full Examples
+-[] `IntersectionObserver` Hooks for checking if a component is in the viewport
