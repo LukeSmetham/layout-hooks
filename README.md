@@ -2,6 +2,14 @@
 
 A set of React Hooks that help make your components responsive, either to their own width, their parent width or the browser width and get realtime dimensions even during CSS transitions.
 
+## Installation
+
+```
+yarn add layout-hooks
+```
+
+> > > > > > > 9b22acda734b39ba8bbdce7b0a510621750aaa51
+
 ## `useLayout`
 
 The `useLayout` hook allows you measure a component in realtime. This works even during css transitions, meaning you can always get an up to date value for the dimensions of a component and alter it's children accordingly. This is great for building totally encapsulated components that respond to their own width and can work in a variety of settings.
@@ -11,8 +19,7 @@ import React from "react";
 import { useLayout, } from "layout-hooks";
 
 export default () => {
-  const layout = useLayout(900);
-
+  const [layout, setRef] = useLayout();
   console.log("layout", layout);
 
   return (
@@ -46,17 +53,17 @@ const App = () => {
 // as an object on your styled components theme
 // & import useStyledMedia instead above.
 const breakpoints = {
-	xs: 600,
-	sm: 900,
-	md: 1200,
-	lg: 1800,
-	xl: 2200,
+  xs: 600,
+  sm: 900,
+  md: 1200,
+  lg: 1800,
+  xl: 2200,
 };
 
 export default () => {
-	<BreakpointsProvider breakpoints={breakpoints}>
-		<App />
-	</BreakpointsProvider>
+  <BreakpointsProvider breakpoints={breakpoints}>
+    <App />
+  </BreakpointsProvider>
 }
 ```
 
